@@ -1,12 +1,19 @@
 // Define this
-export interface TodoType {}
+export interface TodoType {
+  text: string,
+  completed: boolean
+}
 
 // Define this
-interface StateProps {}
+interface StateProps {
+  todo: TodoType,
+  toggleTodoCompletion: (todo: TodoType) => void,
+  removeTodo: (todo: TodoType) => void,
+}
 
 export const Todo = (props: StateProps) => {
 
-  const { todo, toggleTodoCompletion, removeTodo } = props
+  const {todo, toggleTodoCompletion, removeTodo } = props
 
   return (
     <li className="todo">
